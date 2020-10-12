@@ -1,0 +1,21 @@
+server:
+  port: 8082
+  
+spring:  application:    name: PAYMENT-SERVICE
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: admin
+    password: admin
+    driver-class-name: org.h2.Driver
+    platform: h2
+ 
+  # enable H2 web console and set url for web console
+  # http://localhost:8080/console
+  h2:
+    console:
+      enabled: true
+      path: /console 
+eureka:  client:    register-with-eureka: true
+    fetch-registry: true
+    service-url:      defaultZone: http://localhost:8761/eureka/
+  instance:    hostname: localhost   
